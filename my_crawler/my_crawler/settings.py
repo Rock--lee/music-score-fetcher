@@ -64,9 +64,14 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'my_crawler.pipelines.MyCrawlerPipeline': 300,
-#}
+ITEM_PIPELINES = {
+    'my_crawler.pipelines.MyCrawlerPipeline': 300,
+}
+IMAGES_STORE = 'E://pic2'
+DOWNLOAD_DELAY = 0.3
+
+
+USER_AGENT = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html

@@ -67,7 +67,7 @@ ROBOTSTXT_OBEY = True
 ITEM_PIPELINES = {
     'my_crawler.pipelines.MyCrawlerPipeline': 300,
 }
-IMAGES_STORE = 'E://pic2'
+IMAGES_STORE = 'E://pic3'
 DOWNLOAD_DELAY = 0.3
 
 

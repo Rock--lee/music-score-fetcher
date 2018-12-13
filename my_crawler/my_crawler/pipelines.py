@@ -22,13 +22,11 @@ class MyCrawlerPipeline(object):
         }
 
         folder_name = f"{item['title']}"
-        folder_name = folder_name.strip()
-        folder_name = folder_name.strip(">>")
-        folder_name = folder_name.rstrip("\\")
+        folder_name = folder_name.strip().strip(">>").rstrip("\\")
 
         for img_url, name in zip(item['src'], item['alt']):
             dir_path = f"{IMAGES_STORE}//{folder_name}"
-            if not os.path.exists(dir_path) and len(item['src']) != 0:
+            if not os.path.exists(dir_path) and not item['src']:
                 try:
                     os.makedirs(dir_path)
                 except OSError:
@@ -42,4 +40,4 @@ class MyCrawlerPipeline(object):
                     print(f"requests.get {name} fail!!")
                 f.write(req.content)
 
-            return item
+        return item
